@@ -1,0 +1,578 @@
+<html lang="en">
+
+<head>
+    <!--Recuerda que head solo es visible para los desarrolladores web-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKIMS</title>
+    <meta name="description" content="the best of kim kardashian">
+    <meta name="keywords" content="kim kardashian, skimks, underwear">
+    <meta name="author" content="Ximena">
+    <meta name="copyright" content="skims- uso no oficial">
+    <meta name="application-name" content="Fashion marketing">
+    <meta name="generator" content="VSCode">
+    <link rel="stylesheet" href="styles.css">
+
+    <!--Bootstrap CSS (CDN)-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- ================== NAVBAR ==================
+       menú superior. Se vuelve "hamburguesa" en móviles.
+       - Cambien textos/links a su gusto.
+       - Si ya tienen LOGO, descomenten el <img> y apunten a /img/logo.svg o .png -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+
+                <img src="img/logo.jpg" alt="XIMENA´S RESALE" height="28" class="align-text-top me-2">
+                <span class="fw-semibold">SKIMS</span>
+            </a>
+
+            <!-- Botón hamburguesa (móvil) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links del navbar -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tablaProductos">Inventario</a></li>
+                </ul>
+
+                <!-- Botón que abre un modal (ver más abajo: #modalAviso) -->
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalAviso">
+                    Aviso
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- ================ /NAVBAR ================== -->
+    <header class="text-center p-3 bg-light">
+        <h1>SKIMS</h1>
+        <p>Ya en México</p>
+    </header>
+    <!--BANNER PROMOCIONAL-->
+    <section class="container my-3">
+        <div id="banner" class="p-4 rounded bg-dark text-white">
+            <h2 class="h4 mb-2"> Promo de la semana</h2>
+            <p class="mb-0"> Envío gratis en compras mayores a $2,499</p>
+        </div>
+        <button id="btnPromo" class="btn btn-warning btn-sm mt-2">
+            Actualizar promoción
+        </button>
+    </section>
+
+
+    <!-- Alerta de ejemplo -->
+    <div class="container mt-3">
+        <div class="alert alert-info" role="alert">
+            Aquí tienes información adicional (ejemplo de <strong>alert</strong>).
+        </div>
+    </div>
+
+    <main class="container my-4">
+        <!-- ============== CARRUSEL ==============
+         - Cada .carousel-item es una diapositiva (slide).
+         - Para AGREGAR un slide: dupliquen un bloque .carousel-item y sumen un indicador.
+         - Para ELIMINAR, borren el bloque y ajusten los indicadores (# de botones). -->
+        <div id="heroCarousel" class="carousel slide mb-4" data-bs-ride="carousel" aria-label="Promociones destacadas">
+            <!-- Indicadores (puntos de navegación) -->
+            <div class="carousel-indicators">
+                <!--: si agregan una 4ª imagen, añadan otro botón con data-bs-slide-to="3" -->
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner rounded-3 shadow-sm">
+                <!-- Slide 1 (activo por defecto) -->
+                <div class="carousel-item active">
+                    <!-- Chicos: cambien la ruta a su imagen -->
+                    <img src="img/SKIMS3.jpg" class="d-block w-100" alt="NOW IN MÉXICO"
+                        style="height:380px; object-fit:cover;">
+                    <div class="carousel-caption d-none d-md-block text-start">
+                        <h5>Inter 25/26</h5>
+                        <p>Nueva colección .</p>
+                        <a href="#catalogo" class="btn btn-primary btn-sm">Ver catálogo</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <img src="img/SKIMS2.webp" class="d-block w-100" alt="Accesorios y ropa"
+                        style="height:380px; object-fit:cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Accesorios</h5>
+                        <p>underwears conjuntos accesorios.</p>
+                        <a href="#tablaProductos" class="btn btn-light btn-sm">Inventario</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <img src="img/skims5.webp" class="d-block w-100" alt="Ofertas especiales"
+                        style="height:380px; object-fit:cover;">
+                    <div class="carousel-caption d-none d-md-block text-end">
+                        <h5>Ofertas</h5>
+                        <p>Ahorra en tu primer pedido.</p>
+                        <!-- este botón abre el modal “modalCupon” -->
+                        <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalCupon">
+                            Obtener cupón
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles prev/next del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"
+                aria-label="Anterior">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"
+                aria-label="Siguiente">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+        <!-- ============ /CARRUSEL ============ -->
+        <div class="row g-4">
+            <!-- Columna principal -->
+            <div class="col-12 col-lg-8" <!-- Card del producto -->
+                <div class="card shadow-sm">
+                    <img src="img/skims.webp" alt="skims" class="card-img-top" width="300">
+                    <div class="card-body">
+                        <h2 class="card-title h4 mb-2">the best for your body</h2>
+                        <p class="card-text fs-5 fw-semibold text-success">$710</p>
+                        <a href="https://www.skimsmx.com/" target="_blank" class="btn btn-primary btn-sm">Comprar
+                            ahora</a>
+                        <hr class="my-4">
+                        <!-- Lista de características -->
+                        <h3 class="h5">Características</h3>
+                        <ul class="mb-0">
+                            <li>shapewear</li>
+                            <li>resalta tu figura</li>
+                            <li>Color: black</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tabla -->
+                <section class="mt-4">id="tabla de productos"
+                    <h3 class="h5 mb-3">Tabla de productos:</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover align-middle">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bodysuit Skims SCULPTING BODYSUIT</td>
+                                    <td>$865</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>T-shirt Push Up Bra Skims FITS EVERYBODY Marrom </td>
+                                    <td>$756</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>Thong Skims STRETCH SATIN DIP Rosas </td>
+                                    <td>$256</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>Thong Skims RHINESTONE STRETCH SATIN STRING PACK </td>
+                                    <td>$672</td>
+                                    <td>6</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr style="font-weight:bold; background-color:#e6e6e6;">
+                                    <td colspan="2">Total de productos</td>
+                                    <td>31</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <!-- SECCION COLAPSABLE -->
+            <!--Sección colapsable-->
+            <!-- data-bs toggle "collapse activa el efecto"-->
+            <section class="my-5">
+                <h3 class="h5 mb-3">Más información:</h3>
+                <p>
+                    <button class="btn btn-outline-info btn" type="button" data-bs-toggle="collapse"
+                        aria-controls="infoExtra">
+                        Mostrar más detalles
+                    </button>
+                </p>
+                <div class="collapse" id="infoExtra">
+                    <div class="card card-body">
+                        <p> skims <strong>skims</strong>, marca fundada por kim kardashian</p>
+                    </div>
+                </div>
+            </section>
+
+            </p>
+        </div class="collapse" id="infoEx<!--Sección Acordeón, nos sirve para agrupar secciones-->
+    <section class=" my-5">
+        <h3 class="h5 mb-3">Preguntas frecuentes:</h3>
+        <div class="accordion" id="miAccordion">
+            <!--Pregunta 1-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="EncabezadoUno">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelUno"
+                        aria-expanded="true" aria-controls="panelUno">
+                        ¿quien fundo la marca?
+                    </button>
+                    <h2>
+                        <div id="panelUno" class="accordion-collapse collapse show" aria-labelledby="EncabezadoUno"
+                            data-bs-parent="#miAccordion">
+                            <div class="accordion-body">
+                                kim kardashian
+                            </div>
+                        </div>
+            </div>
+            <!--Pregunta 2-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="EncabezadoUno">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelDos"
+                        aria-expanded="true" aria-controls="panelDos">
+                        ¿Cuánto tiempo tarda el envio?
+                    </button>
+                    <h2>
+                        <div id="panelDos" class="accordion-collapse collapse " aria-labelledby="EncabezadoDos"
+                            data-bs-parent="#miAccordion">
+                            <div class="accordion-body">
+                                Los envios tardan entre 2 y 5 días hábiles, dependiendo de la ubicación del cliente y la
+                                disponibilidad del producto. Envíos gratis a todo México en compras mayores a $1,499
+                            </div>
+                        </div>
+            </div>tra">
+        </div class="card card-body">
+
+        <!-- Columna lateral -->
+        <!--<aside class="col-12 col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">Botones (Bootstrap)</div>
+                <div class="card-body d-flex flex-wrap gap-2">
+                    <button class="btn btn-primary btn-sm">Primario</button>
+                    <button class="btn btn-secondary btn-sm">Secundario</button>
+                    <button class="btn btn-success btn-sm">Éxito</button>
+                    <button class="btn btn-danger btn-sm">Peligro</button>
+                    <button class="btn btn-warning btn-sm">Advertencia</button>->
+                </div>
+            </div>-->
+        </aside>
+        </div>
+    </main>
+
+    <div class="card mb-3">
+        <div class="card-header">Card básica</div>
+        <div class="card-body">
+            <h5 class="card-title">NUA</h5>
+            <p class="card-text">THE BEST OF HER IN A BEST PRICE</p>
+            <a href="#" class="btn btn-primary btn-sm">Leer más</a>
+        </div>
+    </div>
+
+    <div class="card mb-3" style="width: 100%;">
+        <img src="img/SKIMS3.jpg" class="card-img-top" alt="Imagen ejemplo">
+        <div class="card-body">
+            <h5 class="card-title">ALL COLORS</h5>
+            <p class="card-text">BUY WITH FACILITIES.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">DISCOUNTS</div>
+        <div class="card-body">
+            <h5 class="card-title">10%</h5>
+            <p class="card-text">BUY NOW.</p>
+            <a href="#" class="btn btn-primary btn-sm">Leer más</a>
+        </div>
+        <div class="card-footer">SKIMS CLOTHES</div>
+    </div>
+    </aside>
+    </div>
+    </main>
+    <!--cierre de main-->
+
+    <!-- ================== MODALES ==================
+       Chicos: para ABRIR un modal, usen data-bs-toggle="modal" y data-bs-target="#ID" -->
+
+    <!-- Modal: Aviso general (lo abre el botón del navbar) -->
+    <div class="modal fade" id="modalAviso" tabindex="-1" aria-labelledby="modalAvisoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalAvisoLabel">Aviso importante</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Chicos: cambien el mensaje libremente -->
+                    Envíos gratis a todo México en compras mayores a $1,499. 🎉
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#catalogo" class="btn btn-primary btn-sm">Ver productos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Cupón (lo abre el botón del carrusel) -->
+    <div class="modal fade" id="modalCupon" tabindex="-1" aria-labelledby="modalCuponLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalCuponLabel">Cupón de bienvenida</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    Usa el código <strong>BASTIK4</strong> y obtén 10% de descuento en tu primera compra.
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal">¡Listo!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Detalles del producto (lo abre el botón "Ver detalles" en la card) -->
+    <div class="modal fade" id="modalDetalles" tabindex="-1" aria-labelledby="modalDetallesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalDetallesLabel">Detalles: Playera del Inter 25/26</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Chicos: ejemplo de layout dentro del modal -->
+                    <div class="row g-3">
+                        <div class="col-md-5">
+                            <img src="img/SKIMS8.jpg" alt="winter skims" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="mb-2">cotton collection.</p>
+                            <ul class="mb-3">
+                                <li>Material: algodon</li>
+                                <li>Colores: bone, cocoa</li>
+                                <li>Tallas:XXS, XS S, M, L, XL</li>
+                                <li>Envío: 2–5 días hábiles</li>
+                            </ul>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="fs-5 fw-bold text-success">$2,299</span>
+                                <a href="https://www.inter.it/en/store/mens-home-shirt-2023-24" target="_blank"
+                                    rel="noopener" class="btn btn-primary btn-sm">Comprar ahora</a>
+                                <button class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="small text-muted mb-0">* Imágenes de referencia. Precio sujeto a cambios sin previo aviso.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================ /MODALES ================ -->
+
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
+<!-- Columna lateral con ejemplos de componentes -->
+<aside class="col-12 col-lg-4">
+    <!--Botones de ejemplo-->
+    <!--<div class="card mb-3">
+        <div class="card-header">Botones (Bootstrap)</div>
+        <div class="card-body d-flex flex-wrap gap-2">
+            <button class="btn btn-dark btn-sm">Primario</button>
+            <button class="btn btn-secondary btn-sm">Secundario</button>
+            <button class="btn btn-success btn-sm">Éxito</button>
+            <button class="btn btn-danger btn-sm">Peligro</button>
+            <button class="btn btn-warning btn-sm">Advertencia</button>
+        </div>-->
+    </div>
+
+    <!--Card básica de ejemplo-->
+    <div class="card mb-3">
+        <div class="card-header">Card básica</div>
+        <div class="card-body">
+            <h5 class="card-title">Combo UNDIES</h5>
+            <p class="card-text">BOXER + BRA = ahorro .</p>
+            <a href="#" class="btn btn-dark btn-sm">Leer más</a>
+        </div>
+    </div>
+
+    <!--Card con imagen-->
+    <div class="card mb-3" style="width: 100%;">
+        <img src="img/skims5.webp" class="card-img-top" alt="Imagen ejemplo">
+        <div class="card-body">
+            <h5 class="card-title">Ediciones limitadas</h5>
+            <p class="card-text">Diseños exclusivos p>
+        </div>
+    </div>
+
+    <!--Card con header y footer-->
+    <div class="card">
+        <div class="card-header">Colección</div>
+        <div class="card-body">
+            <h5 class="card-title">NUA</h5>
+            <p class="card-text">ROPA Y MODA .</p>
+            <a href="#" class="btn btn-dark btn-sm">Ver más</a>
+        </div>
+        <div class="card-footer">By XIMENA BASTIDA</div>
+    </div>
+</aside>
+</div>
+</main>
+<!--/CONTENIDO PRINCIPAL-MAIN-->
+<!--FORMULARIO DE CONTACTO-->
+<section id="contacto" class="container my-5">
+    <h3 class="h5 mb-3">Contacto</h3>
+    <form id="formContacto" class="row g-3" aria-label="Formulario de contacto">
+        <!--Campo 1-->
+        <div class="col-md-6">
+            <label for="cNombre" class="form-label">
+
+                Nombre</label>
+            <input type="text" id="cNombre" name="nombre" class="form-control" placeholder="Tu nombre">
+        </div>
+
+        <div class="col-md-6">
+            <label form="cEmail" class="form-label">
+                Email</label>
+            <input type="email" id="cEmail" class="form-control" placeholder="tucorreo@ejemplo.com">
+
+
+        </div>
+        <div class="col-12">
+            <label form="cMsg" class="form-label">
+                Mensaje</label>
+            <input type="cMsg" class="form-control" rows="3" placeholder="¿En que te podemos ayudar?">
+        </div>
+
+        </div>
+        <div class="col-12 d-flex gap-2">
+            <button type="reset" class="btn btn-primary">
+                Enviar</button>
+            <button type="reset" class="btn btn-outline-secondary">
+                Limpiar</button>
+        </div>
+    </form>
+</section>
+
+<!-- ================== MODALES ================== -->
+<!--Modal: Aviso general (lo abre el botón del navbar)-->
+<div class="modal fade" id="modalAviso" tabindex="-1" aria-labelledby="modalAvisoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalAvisoLabel">Aviso importante</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                Lanzamiento: envío gratis en compras mayores a $599 MXN.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+                <a href="#catalogo" class="btn btn-dark btn-sm">Ver productos</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Cupón (lo abre el botón del carrusel) -->
+<div class="modal fade" id="modalCupon" tabindex="-1" aria-labelledby="modalCuponLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalCuponLabel">Cupón de bienvenida</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                Usa el código <strong>BASTI4</strong> y obtén 10% de descuento en tu primera compra.
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal">¡Listo!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Detalles del producto (lo abre el botón "Ver detalles" en la card) -->
+<div class="modal fade" id="modalDetalles" tabindex="-1" aria-labelledby="modalDetallesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalDetallesLabel">Detalles: Funda iPhone 17 • MagSafe</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Chicos: ejemplo de layout dentro del modal -->
+                <div class="row g-3">
+                    <div class="col-md-5">
+                        <img src="img/SKIMS8.jpg" alt="PIJAMA" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-7">
+                        <p class="mb-2">LO MÁS VENDIDO .</p>
+                        <ul class="mb-3">
+                            <li>Compatibilidad: TALLAS XXS A XXL</li>
+                            <li>Material: algodon </li>
+                            <li>Incluye: pantalon y top </li>
+                            <li>Envío: 3–5 días hábiles</li>
+                        </ul>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fs-5 fw-bold text-success">$399 MXN</span>
+                            <a href="#" target="_blank" rel="noopener" class="btn btn-dark btn-sm">Comprar ahora</a>
+                            <button class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p class="small text-muted mb-0">* Imágenes de referencia. Precio sujeto a cambios sin previo aviso.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ================ /MODALES ================ -->
+
+<!--Bootstrap JS-->
+<!--===========================/Modales ================================= -->
+<!--testimonios -->
+<section id="testimonios" class="continer my-5">
+    <h3 class="h5 mb-3"> Testimonios </h3>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="p-3 border rounded testimonio testimonio-vip">
+                <h4 class="h6 mb-1"> Sara (VIP) </h4>
+                <p class="mb-0">Muy buenos productos que te dejan la piel linda</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 border rounded testimonio">
+                <h4 class="h6- mb-1"> elina </h4>
+                <p class="mb-0"> Me encantan los colores, waooo</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>

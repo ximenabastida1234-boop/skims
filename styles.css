@@ -1,0 +1,215 @@
+/* ==================== FUENTES Y VARIABLES ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+:root {
+    --verde-principal: hsl(176, 82%, 20%);
+    --verde-profundo: hsl(175, 83%, 16%);
+    --verde-bosque: hsl(175, 84%, 13%);
+    --verde-petroleo: hsl(174, 88%, 9%);
+    --verde-oscuro: hsl(175, 100%, 6%);
+    --texto-claro: hsl(0, 89%, 4%);
+    --acento-dorado: hsl(45, 90%, 55%);
+    --fuente-principal: 'Exo 2', sans-serif;
+}
+
+/* ==================== ESTILO BASE ==================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--verde-petroleo);
+    color: var(--texto-claro);
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    background-color: var(--verde-oscuro) !important;
+}
+
+.navbar-brand span {
+    color: var(--acento-dorado);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ==================== ENCABEZADOS ==================== */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--acento-dorado);
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    border-bottom: 2px solid var(--acento-dorado);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+/* ==================== ENLACES ==================== */
+a {
+    color: var(--acento-dorado);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--texto-claro);
+}
+
+/* ==================== BOTONES ==================== */
+.btn-primary {
+    background-color: var(--acento-dorado);
+    border: none;
+    color: var(--verde-oscuro);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--verde-principal);
+    color: var(--texto-claro);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--acento-dorado);
+    color: var(--acento-dorado);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--acento-dorado);
+    color: var(--verde-oscuro);
+}
+
+/* ==================== TARJETAS ==================== */
+.card {
+    background-color: var(--verde-bosque);
+    border: 1px solid var(--verde-profundo);
+    border-radius: 8px;
+    color: var(--texto-claro);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    background-color: var(--verde-principal);
+    color: var(--texto-claro);
+    font-weight: bold;
+}
+
+.card-footer {
+    background-color: var(--verde-oscuro);
+    color: var(--acento-dorado);
+    text-align: center;
+}
+
+/* ==================== TABLAS ==================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+thead {
+    background-color: var(--verde-principal);
+    color: var(--texto-claro);
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid var(--verde-profundo);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--verde-bosque);
+}
+
+/* ==================== ALERTAS ==================== */
+.alert-info {
+    background-color: var(--verde-profundo);
+    color: var(--texto-claro);
+    border: 1px solid var(--acento-dorado);
+}
+
+/* ==================== MODALES ==================== */
+.modal-content {
+    background-color: var(--verde-bosque);
+    color: var(--texto-claro);
+    border: 1px solid var(--acento-dorado);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background-color: var(--verde-oscuro);
+    color: var(--texto-claro);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--verde-principal);
+}
+
+/* ==================== EFECTOS ==================== */
+.card:hover,
+.btn:hover {
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
+}
+
+/* ===== BOTONES FLOTANTES DE REDES ===== */
+.social-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999;
+    /* 🔥 hace que estén por encima de todo */
+}
+
+/* Estilo general */
+.social-buttons a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Colores individuales */
+.btn-whatsapp {
+    background-color: #25D366;
+}
+
+.btn-instagram {
+    background: radial-gradient(circle at 30% 107%,
+            #fdf497 0%, #fdf497 5%,
+            #fd5949 45%, #d6249f 60%,
+            #285AEB 90%);
+}
+
+.btn-tiktok {
+    background-color: #010101;
+    color: #fff;
+}
+
+/* Hover */
+.social-buttons a:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 15px var(--acento-dorado, #f5c84c);
+    color: var(--texto-claro);
+}
